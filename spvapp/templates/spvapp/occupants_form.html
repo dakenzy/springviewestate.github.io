@@ -1,0 +1,21 @@
+{% extends 'spvapp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<p>SPRING VIEW ESTATE OCCUPANTS REGISTRATION FORM</p>
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    {{ occupants.fullname|as_crispy_field }}
+
+    <div class="row">
+        <div class="col-md-6">
+            {{ occupants.gender|as_crispy_field }}
+        </div>
+        <div class="col-md-6">
+            {{ occupants.hse_number|as_crispy_field }}
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success"><i class="fas fa-database"></i> Submit</button>
+</form>
+{% endblock %}
